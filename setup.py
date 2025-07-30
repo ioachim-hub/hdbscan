@@ -90,7 +90,7 @@ configuration = {
         _hdbscan_boruvka,
         _hdbscan_reachability,
         _prediction_utils,
-        dist_metrics,
+        # dist_metrics,  # Temporarily disabled due to compilation issues
     ],
     "cmdclass": {"build_ext": CustomBuildExtCommand},
     "test_suite": "nose.collector",
@@ -101,11 +101,11 @@ configuration = {
 # Remove old/broken C files to force regeneration
 c_files = [
     "hdbscan/_hdbscan_tree.c",
-    "hdbscan/_hdbscan_linkage.c", 
+    "hdbscan/_hdbscan_linkage.c",
     "hdbscan/_hdbscan_boruvka.c",
     "hdbscan/_hdbscan_reachability.c",
     "hdbscan/_prediction_utils.c",
-    "hdbscan/dist_metrics.c"
+    # "hdbscan/dist_metrics.c"  # Temporarily disabled due to compilation issues
 ]
 
 for c_file in c_files:
